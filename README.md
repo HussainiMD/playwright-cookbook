@@ -16,3 +16,4 @@ A collection of Playwright test automation snippets for quick learning and refer
 git clone https://github.com/<yourname>/playwright-cookbook.git
 npm install
 npx playwright test ui-interactions/handle-popups.spec.ts
+TIP: We can specify partial name of test/spec file and playwright runner will do the job
