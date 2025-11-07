@@ -18,4 +18,6 @@ test('A simple classic user login test', async () => {
     await loginBtn.click({button: "left"});
 
     await page.waitForTimeout(3000); /*Script is fast, need a moment to notice state of page after login action*/
+    await page.close();
+    ffBrowser.close();/*no need to wait; faster tests*/
 })
