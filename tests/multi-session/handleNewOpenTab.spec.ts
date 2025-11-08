@@ -15,4 +15,8 @@ test('test navigation to new tab after clicking link', async () => {
     const newPage:Page =  (await Promise.all([context.waitForEvent('page'), twitterBtn.click()]))[0];    
     expect(newPage.url().toLowerCase()).toContain('interviewai');
     await page.waitForTimeout(2000);
+    
+    await newPage.close();
+    await page.close();
+    chromeBrowser.close();
 })
