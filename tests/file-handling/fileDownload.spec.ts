@@ -14,9 +14,7 @@ test('testing file download', async ({page}) => {
         //similar to multi window handling, we need both to START at once
         const [downloadFile] : [Download, void]= await Promise.all([page.waitForEvent('download'), downloadBtn.click()]);
         //notice that we are using  response returned from first arugument to all() function which is waitForEvent
-        expect(downloadFile.suggestedFilename()).toEqual('Lambdainfo.txt') 
-
-        await page.pause();
+        expect(downloadFile.suggestedFilename()).toEqual('Lambdainfo.txt');
     }
     page.close();
 })
