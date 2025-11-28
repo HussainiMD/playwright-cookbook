@@ -1,4 +1,4 @@
-import {test} from "../../fixtures/autPageFixture.spec"; //instead of standard, we will import our custom test fixture
+import {test} from "../../fixtures/autPageFixture"; //instead of standard, we will import our custom test fixture
 import {expect, Page, Locator} from "@playwright/test";
 
 test.only('sample test with predefined AUT page', async ({autName, autPage}) => {
