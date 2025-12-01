@@ -14,11 +14,15 @@ export class OpenCartPage {
         this.page.goto('https://naveenautomationlabs.com/opencart/index.php?route=common/home');
     }
 
-    async navigateToLoginPage() {
+    async navigateToAccountSection() {
         const accountBtn:Locator = this.page.locator(this.accountBtnQuery).filter({hasText: this.accountBtnFilterTxt, visible: true});
-        await accountBtn.click();
+        await accountBtn.click();        
+    }
+
+    async navigateToLoginPage() {                
         const loginBtn:Locator = this.page.locator(this.loginBtnQuery).filter({hasText: this.loginBtnFilterTxt, visible: true});
         await loginBtn.click();
+        expect(await this.page.title()).toEqual('Account Login');
     }
 
     async fillUserName(name: string) {
@@ -37,5 +41,9 @@ export class OpenCartPage {
         await expect(this.page).toHaveTitle('My Account');
     }
 
+    async checkIfLogoutBtnVisible() {
+        const logoutBtn: Locator = this.page.locator(this.loginBtnQuery).filter({hasText: 'Logout', visible: true});
+        expect(await logoutBtn.count()).toBe(1);        
+    }
 
 }

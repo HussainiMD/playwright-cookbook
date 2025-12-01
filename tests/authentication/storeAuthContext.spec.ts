@@ -3,6 +3,7 @@ import {OpenCartPage} from "../../POM/openCartPage";
 
 test('saving authorized session state', async ({page}) => {
     const cartPage:OpenCartPage = new OpenCartPage(page);
+    await cartPage.navigateToAccountSection();
     await cartPage.navigateToLoginPage();
     await cartPage.fillUserName('playwright.tesht1@gmail.com');
     await cartPage.fillPassword('myTest$123');
