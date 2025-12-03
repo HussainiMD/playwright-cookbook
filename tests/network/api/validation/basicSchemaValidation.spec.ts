@@ -24,3 +24,38 @@ test('get records', async ({page, request}) => {
     expect(apiResponseObj.page).toBe(pageNum);
     expect(apiResponseObj.data).toEqual(expect.any(Array));//all JSON data types can be verified like this
 })
+
+
+/*Here we are NOT defining any INTERFACE like we did in earlier example, instead we are using "toMatchObject()" method provided by playwright */
+test('verify records with matchObject() function', async ({page, request}) => {    
+    const apiResponse: APIResponse = await request.get(`https://reqres.in/api/users?page=${pageNum}`,{
+        headers: {
+            'x-api-key':'reqres-free-v1'
+        }
+    });
+    
+    /*response status is OK */
+    expect(apiResponse.status()).toBe(200);
+    const apiResponseObj:ResponseObjectType = await apiResponse.json();
+    
+    expect(apiResponseObj).toMatchObject({
+        page: expect.any(Number),
+        per_page: expect.any(Number),
+        total: expect.any(Number),
+        total_pages: expect.any(Number),
+        data: expect.arrayContaining([ //array of objects with following definition
+            {
+                id: expect.any(Number),
+                email: expect.any(String),
+                first_name: expect.any(String),
+                last_name: expect.any(String),
+                avatar: expect.any(String)
+            }
+        ]),
+        support: {
+            url: expect.any(String),
+            text: expect.any(String)
+        },
+        _meta: expect.any(Object)  //we are not validating meta data contents      
+    })
+})
