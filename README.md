@@ -24,7 +24,7 @@ Rather than bundling everything into a big monolithic project, this “cookbook�
 | [Multi Session](./tests/multi-session) | New Tab/Window handling  |
 | [Data Driven](./tests/data-driven) | Dynamic Data Driven  |
 | [Evidence Capture](./tests/evidences) | Compare Screenshots, Pixel Comparision, Logo dimension matches  |
-| [Page Object Model](./tests/POM) | Page Object Model Architecture Pattern demo  |
+| [Page Object Model](./POM) | Page Object Model Architecture Pattern demo  |
 | …and more | Feel free to expand with new scenarios as needed. |
 
 *(Each snippet lives in its own `.spec.ts` file under corresponding folder.)*
