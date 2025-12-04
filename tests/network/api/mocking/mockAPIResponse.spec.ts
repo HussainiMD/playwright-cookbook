@@ -8,6 +8,7 @@ function getMockJSON(itemsList: Array<String>): Array<Object> {
          })  
 }
 
+/* Here we are mockig an API used by the UI */
 test("API Mocking test", async ({ page }) => {
    /*Note that this is NOT wild card path match, instead a very specific match*/ 
   page.route(
