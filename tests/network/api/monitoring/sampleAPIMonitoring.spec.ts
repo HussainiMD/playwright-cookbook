@@ -7,7 +7,7 @@ P.N:
   double line drawn on console is for seperation between each pair of request & response
 
 */
-test.only('API Monitoring example', async ({page}) => {
+test('API Monitoring example', async ({page}) => {
   test.slow(); //marking it slow as console logging is I/O bound, hence time taking
 
   /*Tracking HTTP request */

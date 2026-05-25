@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/HussainiMD/playwright-cookbook#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^12.9.0",
     "@playwright/test": "^1.56.1",
-    "@types/node": "^24.10.0"
+    "@types/node": "^24.12.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
     "@types/ajv": "^0.0.5",
