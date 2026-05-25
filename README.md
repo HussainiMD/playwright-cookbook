@@ -45,3 +45,6 @@ To run in HEADED mode:
 npx playwright test path/to/your/example.spec.ts --project=chromium --headed
 
 TIP: We can specify partial name of test/spec file and playwright runner will do the job
+
+To run demo of BDD Cucumber:
+npx cucumber-js --require-module ts-node/register --require "./BDD-Cucumber/tests/steps/**/*.ts" "./BDD-Cucumber/tests/features/**/*.feature"
